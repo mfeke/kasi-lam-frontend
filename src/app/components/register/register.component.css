@@ -1,0 +1,31 @@
+
+.img{
+  width: 100;
+  height: 90px;
+  border-radius: 50%;
+
+}
+input[type=text], input[type=password],input[type=file] , select,input[type=email]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-sizing: border-box;
+    background-color: white;
+  }
+
+  button {
+    background-color:black;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 25px;
+    /* margin: 8px 0; */
+    border: none;
+    height: 55px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
