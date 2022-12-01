@@ -1,34 +1,52 @@
-<div class="container" *ngIf="currentUser; else loggedOut">
 
-  <header class="container">
-    <div class="LOGO-IMG " style="margin-top: 20px;">
-      <img class="image-circle" src="https://i.postimg.cc/YSzWgRnz/1.png" alt="">
-    </div>
-    <div class="d-flex" style="justify-content: center;">
-      <h3>My Profile</h3>
-    </div>
-    
-    <h5>
-      <strong>{{currentUser.email }}</strong> 
-    </h5>
-    <img src="" alt="">
-  </header>
-  <p>
-    <strong>Token:</strong>
-    {{ currentUser.accessToken.substring(0, 20) }} ... {{ currentUser.accessToken.substr(currentUser.accessToken.length
-    - 20) }}
-  </p>
-  <p>
-    <strong>Email:</strong>
-    {{ currentUser.email }}
-  </p>
-  <strong>Roles:</strong>
-  <ul>
-    <li *ngFor="let role of currentUser.roles">
-      {{ role }}
-    </li>
-  </ul>
-</div>
 <ng-template #loggedOut>
   Please login.
 </ng-template>
+
+
+<div class="page-content page-container" id="page-content" *ngIf="currentUser; else loggedOut">
+  <div class="padding">
+      <div class="row container d-flex justify-content-center">
+<div class="col-xl-6 col-md-12">
+                                              <div class="card user-card-full">
+                                                  <div class="row m-l-0 m-r-0">
+                                                      <div class="col-sm-4 bg-c-lite-green user-profile">
+                                                          <div class="card-block text-center text-white">
+                                                              <div class="m-b-25">
+
+                                                              </div>     <img [src]="currentUser.image" class="img-radius" alt="User-Profile-Image">
+                                                              <h6 class="f-w-600" class="text-main">{{currentUser.username}}</h6>
+                                                              <p  class="text-main">{{currentUser.shopName}}</p>
+                                                              <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-sm-8">
+                                                          <div class="card-block">
+                                                              <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                                                              <div class="row">
+                                                                  <div class="col-sm-6">
+                                                                      <p class="m-b-10 f-w-600">Email</p>
+                                                                      <h6 class="text-muted f-w-400">{{currentUser.email }}</h6>
+                                                                  </div>
+                                                                  <div class="col-sm-6">
+                                                                      <p class="m-b-10 f-w-600">Phone</p>
+                                                                      <h6 class="text-muted f-w-400">{{currentUser.address}}</h6>
+                                                                  </div>
+                                                              </div>
+                                                              
+                                                              <div class="row">
+                                                                  <div class="col-sm-6">
+                                                                      <p class="m-b-10 f-w-600">Street</p>
+                                                                      <h6 class="text-muted f-w-400"> {{currentUser.phone}}</h6>
+                                                                  </div>
+                                                              </div>
+
+                                                             
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                           </div>
+                                              </div>
+                                          </div>

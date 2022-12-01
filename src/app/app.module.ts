@@ -15,6 +15,9 @@ import { BoardUserComponent } from './components/board-user/board-user.component
 import { authInterceptorProviders } from'./_helpers/auth.interceptor';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartComponent } from './components/cart/cart.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { ShopMenuComponent } from './components/shop-menu/shop-menu.component';
+import { UpdateComponent } from './components/update/update.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { CartComponent } from './components/cart/cart.component';
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
-    CartComponent
+    CartComponent,
+    AddProductComponent,
+    ShopMenuComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

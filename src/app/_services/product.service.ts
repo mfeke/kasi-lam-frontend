@@ -9,30 +9,57 @@ export interface Product{
   title:string,
   price:number,
   image: string
+  category: string
 }
-
+const AUTH_TOKEN = window.sessionStorage.getItem('auth-token')
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
+  headers: new HttpHeaders({ 'x-access-token': `${AUTH_TOKEN}` })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+  items: Product[] = [];
 
-  API_product="http://localhost:8080/kasi/product"
+  API_product="http://localhost:8080/api/products"
 
-  constructor(private http: HttpClient) { }
-  getProduct(id: string | null): Observable<Product> {
-    const url = `${this.API_product}`;
-    return this.http.get<Product>(url).pipe();
+  constructor( private http: HttpClient ) { }
+
+  getMenu(id: string | null): Observable<Product[]> {
+    return this.http.get<Product[]>(this.API_product+`/menu/${id}`).pipe();
   }
 
+  getOneProduct(id: string | null): Observable<Product> {
+    return this.http.get<Product>(this.API_product+`/${id}`)
+  }
 
-  
+  addToCart(product: Product){
+    this.items?.push(product)
+    window.localStorage.setItem('cart', JSON.stringify(this.items))
+  }
+
+ 
+  addProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.API_product, product, httpOptions)
+  }
+
   postProduct(data: any ): Observable<any> {
    
     return this.http.post(  this.API_product, data,
     httpOptions);
   }  
+
+  deleteProduct(id: string): Observable<any> {
+    const url = `${this.API_product}/${id}`;
+  
+    return this.http.delete<any>(url, httpOptions)
+  }
+
+  updateProduct(id:string | null, data: any):Observable<any>{
+    const url = `${this.API_product}/${id}`
+    return this.http.put<any>(url, data, httpOptions)
+  }
+
  
 }

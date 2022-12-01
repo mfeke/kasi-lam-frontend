@@ -1,0 +1,8 @@
+@media only screen and (max-width: 500px){
+    .titles{
+        font-size: 12px;
+    }
+    .navbar-brand{
+        font-size: 13px;
+    }
+}

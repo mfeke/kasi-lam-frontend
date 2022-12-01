@@ -1,0 +1,106 @@
+input[type=text], input[type=password],input[type=file] , select{
+    width: 100%;
+    padding: 6px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: white;
+  }
+  
+  button {
+    background-color:black;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 25px;
+    /* margin: 8px 0; */
+    border: none;
+    height: 55px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .card-img-top {
+    width: 120px !important;
+    height: 80px;
+  }
+  
+  /* .card {
+   margin: 20px;
+    padding-top: 58px;
+    width: 250px; 
+    border: none; 
+    border-radius: 30px;
+    margin-bottom: 30px !important;
+  } */
+  .update-icon{
+    margin-right:140px;
+    margin-bottom: 10px;
+   
+  }
+  .delete-icon{
+    margin-top: 2px;
+  }
+    
+    /* Full-width inputs
+    input[type=text], input[type=password],input[type=file] , select{
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      box-sizing: border-box;
+      background-color: white;
+    }
+    */
+  
+    .text-head{
+      margin-right: 50px;
+    }
+    .cart-head{
+      margin-top: 5px;
+    }
+    .img-product{
+      border-radius: 50%;
+      width: 140px;
+      height: 130px;
+  
+    }
+    
+    /* Set a style for all buttons */
+    button {
+      background-color:black;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 25px;
+      /* margin: 8px 0; */
+      border: none;
+      height: 55px;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    /* Add a hover effect for buttons */
+    button:hover {
+      opacity: 0.8;
+    }
+  
+  
+    
+    /* Extra style for the cancel button (red) */
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+    
+    /* Center the avatar image inside this container */
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+    }
+    
