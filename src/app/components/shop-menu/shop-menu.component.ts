@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/_services/product.service';
 import { user } from 'src/app/_services/user.service';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
+import { CartService } from 'src/app/_services/cart.service';
 
 @Component({
   selector: 'app-shop-menu',
@@ -24,7 +25,9 @@ export class ShopMenuComponent implements OnInit {
   constructor( private route: ActivatedRoute, 
     private productService: ProductService ,
     private tokenStorage: TokenStorageService,
-    private userService: UserService) { }
+    private userService: UserService,
+    private cartService: CartService
+    ) { }
 
   ngOnInit(): void {
     this.getMenu()
@@ -71,9 +74,13 @@ export class ShopMenuComponent implements OnInit {
     //   )
     // }
 
-    addToCart(product: any){
-      this.productService.addToCart(product)
-      window.alert(`Your ${product.title} has been added to the cart!`);
+    addToCart(title: string, image: string, price: any){
+      this.cartService.addToCart({title, image, price}).subscribe({
+        next: data => {
+          console.log(data)
+        }
+      })
+     window.alert("add to cart")
     }
 }
 

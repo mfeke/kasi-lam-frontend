@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ProductService } from './product.service';
 
 @Injectable({
@@ -6,13 +8,23 @@ import { ProductService } from './product.service';
 })
 export class CartService {
 
-  constructor( private productService: ProductService ) { }
+  constructor( private productService: ProductService, private http: HttpClient ) { }
 
-  public getCart(): any {
-    const cart = window.localStorage.getItem('cart');
-    if (cart) {
-    return JSON.parse(cart);
-    }return ;
+  API_product="http://localhost:8080/api/cart"
+
+  public cartItemList :any =[]
+
+
+  getCart(): Observable<any>{
+    return this.http.get<any>(this.API_product)
+    
+  }
+
+
+  addToCart(data: any): Observable<any>{
+
+    return this.http.post<any>(this.API_product, data)
+    
   }
   // getTotalPrice( item:any){
   //   let getTotal = 0;
@@ -21,11 +33,18 @@ export class CartService {
 
   // }
 
-  deleteItem(items: any, product: any) {
+  deleteProduct(id: string): Observable<any> {
+    const url = `${this.API_product}/${id}`;
+  
+    return this.http.delete<any>(url)
+  }
+
+  getTotalPrice(items: any, product: any) {
+
     return items.filter((elem:any) => elem.id != product.id)
   }
 
-  clearCart(){
-    return window.localStorage.removeItem('cart')
+  clearCart(): Observable<any>{
+    return this.http.delete(this.API_product+'/all/products')
   }
 }

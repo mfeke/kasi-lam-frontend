@@ -1,5 +1,5 @@
 <div class="container" *ngIf="User">
-    <h3 routerLink="/profile">{{User.shopName}}</h3>
+    <h3 routerLink="/shopProfile">{{User.shopName}}</h3>
 </div>
 <div class="container" *ngIf="products">
     <div class="row d-flex">
@@ -31,7 +31,7 @@
                             </small>
                             <ng-template #block>
                                 <div class="container" >
-                                    <h4 (click)="addToCart(product)" class="text-primary cart">+</h4>
+                                    <h4 (click)="addToCart(product.title, product.image, product.price)" class="text-primary cart">+</h4>
                                 </div>
                             </ng-template>
                         </label> 

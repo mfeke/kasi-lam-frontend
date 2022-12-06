@@ -1,3 +1,4 @@
+import { ShopProfileComponent } from './components/shop-profile/shop-profile.component';
 import { UpdateComponent } from './components/update/update.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   { path: 'add', component: AddProductComponent },
   { path: 'cart', component: CartComponent },
+  {path:"shopProfile", component:ShopProfileComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

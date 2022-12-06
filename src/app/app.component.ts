@@ -9,6 +9,7 @@ export class AppComponent {
   showAdminBoard = false;
   showModeratorBoard = false;
   username?: string;
+  display: boolean = false
   constructor(private tokenStorageService: TokenStorageService) { }
   ngOnInit(): void {
     this.isLoggedIn = this.tokenStorageService.getToken();
@@ -23,5 +24,9 @@ export class AppComponent {
   logout(): void {
   this.tokenStorageService.signOut();
   window.location.reload();
+  }
+
+  toggle() {
+    this.display = !this.display
   }
 }

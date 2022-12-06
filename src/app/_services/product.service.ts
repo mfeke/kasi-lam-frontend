@@ -1,3 +1,4 @@
+import { CartService } from 'src/app/_services/cart.service';
 import { Injectable } from '@angular/core';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -24,7 +25,8 @@ export class ProductService {
 
   API_product="http://localhost:8080/api/products"
 
-  constructor( private http: HttpClient ) { }
+  constructor( private http: HttpClient
+     ) { }
 
   getMenu(id: string | null): Observable<Product[]> {
     return this.http.get<Product[]>(this.API_product+`/menu/${id}`).pipe();
@@ -34,10 +36,7 @@ export class ProductService {
     return this.http.get<Product>(this.API_product+`/${id}`)
   }
 
-  addToCart(product: Product){
-    this.items?.push(product)
-    window.localStorage.setItem('cart', JSON.stringify(this.items))
-  }
+  
 
  
   addProduct(product: Product): Observable<Product> {

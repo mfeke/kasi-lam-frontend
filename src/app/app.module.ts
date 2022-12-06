@@ -18,6 +18,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { ShopMenuComponent } from './components/shop-menu/shop-menu.component';
 import { UpdateComponent } from './components/update/update.component';
+import { ComponentsComponent } from './components/components.component';
+import { ShopProfileComponent } from './components/shop-profile/shop-profile.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { UpdateComponent } from './components/update/update.component';
     CartComponent,
     AddProductComponent,
     ShopMenuComponent,
-    UpdateComponent
+    UpdateComponent,
+    ComponentsComponent,
+    ShopProfileComponent
   ],
   imports: [
     BrowserModule,
