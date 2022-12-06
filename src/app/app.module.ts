@@ -20,6 +20,7 @@ import { ShopMenuComponent } from './components/shop-menu/shop-menu.component';
 import { UpdateComponent } from './components/update/update.component';
 import { ComponentsComponent } from './components/components.component';
 import { ShopProfileComponent } from './components/shop-profile/shop-profile.component';
+import { FormCheckoutComponent } from './components/form-checkout/form-checkout.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ShopProfileComponent } from './components/shop-profile/shop-profile.com
     ShopMenuComponent,
     UpdateComponent,
     ComponentsComponent,
-    ShopProfileComponent
+    ShopProfileComponent,
+    FormCheckoutComponent
   ],
   imports: [
     BrowserModule,

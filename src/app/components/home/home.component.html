@@ -2,7 +2,7 @@
   <div class="shops-content" *ngIf="shops">
     <div class="shop-wrapper" >
       
-      <a href="" *ngFor="let shop of shops" routerLink="/shop-details/{{shop._id}}">
+      <a href="" *ngFor="let shop of shops" class="nav-link" routerLink="/shop-details/{{shop._id}}">
         <div class="card  col-small-4" >
         
           <img [src]="shop.image" class="card-img-top" alt="This is {{shop.username}}'s shop">
