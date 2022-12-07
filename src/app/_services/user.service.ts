@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const API_URL = 'http://54.227.94.57:8080/api/shop/';
+const API_URL = 'http://localhost:8080/api/shop/';
 const AUTH_TOKEN = window.sessionStorage.getItem('auth-token')
 
 const httpOptions = {

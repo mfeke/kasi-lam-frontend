@@ -23,7 +23,7 @@ const httpOptions = {
 export class ProductService {
   items: Product[] = [];
 
-  API_product="http://54.227.94.57:8080/api/products"
+  API_product="http://localhost:8080/api/products"
 
   constructor( private http: HttpClient
      ) { }

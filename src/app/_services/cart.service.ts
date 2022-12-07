@@ -10,7 +10,7 @@ export class CartService {
 
   constructor( private productService: ProductService, private http: HttpClient ) { }
 
-   API_product="http://54.227.94.57:8080/api/cart"
+   API_product="http://localhost:8080/api/cart"
 
   public cartItemList :any =[]
 
