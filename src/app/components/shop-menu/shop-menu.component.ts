@@ -80,7 +80,7 @@ export class ShopMenuComponent implements OnInit {
           console.log(data)
         }
       })
-     window.alert("add to cart")
+    //  window.alert("add to cart")
     }
 }
 

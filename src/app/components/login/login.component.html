@@ -6,7 +6,7 @@
     </div>
     <div class="container">
       <div class="form-group">
-        <label for="username"><b>Shop Name</b></label>
+        <label for="username"><b>Username</b></label>
         <input type="text"  name="username" class="form-control" [(ngModel)]="form.username" required #username="ngModel" placeholder="Enter username" name="uname" required>
         <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted" >
           <div *ngIf="password.errors['required']">Password is required</div>
