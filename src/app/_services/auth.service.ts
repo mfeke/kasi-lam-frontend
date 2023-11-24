@@ -18,9 +18,9 @@ constructor(private http: HttpClient) { }
     },
     httpOptions);
   }
-  register(username: string, shopName:string, email: string, password: string, image:string,address:string,phone:string ): Observable<any> {
+  register(username: string, email: string, password: string, ): Observable<any> {
       return this.http.post(AUTH_API + 'signup', {
-        username, email, password, image, shopName, address, phone 
+        username, email, password, 
       },
       httpOptions);
   }

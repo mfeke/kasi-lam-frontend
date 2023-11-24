@@ -1,83 +1,24 @@
+.postion-b{
+  display: flex;
+  align-items: end;
+}
+.h-100{
+  width: 100px;
+}
 
-.img{
-  width: 100;
-  height: 90px;
-  border-radius: 50%;
+.h-30{
+  height: 250px;
+}
+.h-60{
+  height: 650px;
+}
+
+.border-r{
+  border-top-left-radius:20px ;
+  border-top-right-radius: 20px;
 
 }
-input[type=text], input[type=password],input[type=file] , select,input[type=email]{
-    width: 100%;
-    padding: 5px 8px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    background-color: white;
-  }
-  .input-small{
-    width: 100%;
-    padding: 8px 10px;
-  }
-  .card{
-    
-    margin-top: 10px;
-    width: 75%;
-  }
-  label{
-    font-size: 12px;
-  }
 
-  button {
-    background-color:black;
-    color: white;
-    padding: 14px 20px;
-    margin-top: 25px;
-    /* margin: 8px 0; */
-    border: none;
-    height: 55px;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  @media only screen and (max-width: 500px){
-    label{
-      font-size: 12px;
-    }
-    input::placeholder {
-      font: 13px sans-serif;
-  }
-
-    input[type=text], input[type=password],input[type=file] , select,input[type=email]{
-      width: 100%;
-      padding: 0px;
-      display: inline-block;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-sizing: border-box;
-      background-color: white;
-    }
-
-    button {
-      background-color:black;
-      color: white;
-      padding: 0px;
-      margin-top: 5px;
-      /* margin: 8px 0; */
-      border: none;
-      height: 40px;
-      border-radius: 10px;
-      cursor: pointer;
-      width: 100%;
-    }
-    .card{
-    
-      margin-top: 10px;
-      width: 95%;
-    }
-
-    p{
-      font-size: 13px;
-    }
-
-  }
+.bold-text{
+  font-weight: 300;
+}

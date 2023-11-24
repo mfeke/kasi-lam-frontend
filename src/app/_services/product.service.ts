@@ -22,6 +22,7 @@ const httpOptions = {
 })
 export class ProductService {
   items: Product[] = [];
+  api="http://localhost:8080/api/products/category/Meat"
 
   API_product="http://localhost:8080/api/products"
 
@@ -37,10 +38,15 @@ export class ProductService {
   }
 
   
-
+getAllProduct():Observable<any>{
+  return this.http.get<any>(`${this.API_product}/AllProduct`)
+}
  
   addProduct(product: Product): Observable<Product> {
     return this.http.post<Product>(this.API_product, product, httpOptions)
+  }
+  getCategory(category:string):Observable<any> {
+    return this.http.post<any>(`${this.API_product}/category/${category}`, httpOptions)
   }
 
   postProduct(data: any ): Observable<any> {

@@ -1,100 +1,35 @@
-
- 
-
-<div class="container" style="margin-bottom:30px ;">
-  <div class="container">
-    <div class="title text-center">
-        <h4>Let's get started !!!</h4>
-        <p >We help you to give the people the kasi taste</p>
+<div class="bg-light  w-100" style="height: 900px;">
+  <div class="container text-center h-30 d-flex align-items-center text-center w-10">
+    <div class="w-100">
+      <h2>Welcome !</h2>
+      <p >Let give the people the kasi taste and feeling !!!</p>
     </div>
-</div>
-<div class="d-flex justify-content-center">
-  <form class="card " *ngIf="!isSuccessful" name="form"(ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-    <div class="text-center">
-      <h3>Create Account</h3>
+  </div>
+  <div class="container pt-5 ps-3 h-60 w-100 bg-white border-r">
+    <h1>Create an account</h1>
+    <p class="text-secondary">Start right now with us</p>
+    <div class="form-group bmd-form-group mt-4">
+      <label class="bmd-label-static mb-2 ps-1">Username</label>
+      <input type="text" class="form-control" placeholder="Your username here"  [(ngModel)]="form.username">
     </div>
-    <div class="container">
-      <div class="form-group">
-        <label for="username"><b> Username</b></label>
-        <input type="text"  name="username" placeholder="Enter Username" [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel" />
-        <div class="alert-danger" *ngIf="username.errors && f.submitted">
-          <div *ngIf="username.errors['required']">Username is required</div><div *ngIf="username.errors['minlength']">
-          Username must be at least 3 characters
-          </div>
-          <div *ngIf="username.errors['maxlength']">
-          Username must be at most 20 characters
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-6">
-          <div class="form-group">
-            <label for="username"><b>Shop Name</b></label>
-            <input type="text"  placeholder="Enter Shop Name" name="username" [(ngModel)]="form.shopName" required minlength="3" maxlength="20" #shopName ="ngModel" />
-            <div class="alert-danger" *ngIf="shopName.errors && f.submitted">
-              <div *ngIf="shopName.errors['required']"> Shop Name is required</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="form-group">
-            <label for="username"><b>Shop's address</b></label>
-            <input type="text"  name="username" placeholder="9 Portswood Rd, Waterfront, Cape Town" [(ngModel)]="form.address" required minlength="3" #username="ngModel" />
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-6">
-          <div class="form-group">
-            <label for="image"><b>Image</b></label>
-            <input type="text"  name="image" [(ngModel)]="form.image"  required  #image="ngModel" placeholder="https://example.of.any.image.jpeg" />
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="form-group">
-            <label for="email"><b>Email</b></label>
-            <input type="email" name="email" [(ngModel)]="form.email"required placeholder="example@gmail.com" email #email="ngModel" />
-            <div class="alert-danger" *ngIf="email.errors && f.submitted">
-              <div *ngIf="email.errors['required']">Email is required</div>
-              <div *ngIf="email.errors['email']"> Email must be a valid email address</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-6">
-          <div class="form-group">
-            <label for="image"><b>Phone Number</b></label>
-            <input type="text" name="image" [(ngModel)]="form.phone" required  maxlength="10" #phone="ngModel" placeholder="Enter Phone Number" />
-            <div class="alert-danger" *ngIf="phone.errors && f.submitted">
-              <div *ngIf="phone.errors['required']">Phone number is required</div>
-              <div *ngIf="phone.errors['minlength']">Phone number must be at least 10 characters </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="form-group">
-            <label for="password"><b>Password</b> </label>
-            <input type="password" name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel" />
-            <div class="alert-danger" *ngIf="password.errors && f.submitted">
-              <div *ngIf="password.errors['required']">Password is required</div>
-              <div *ngIf="password.errors['minlength']">Password must be at least 6 characters </div>
-            </div>
-          </div> 
-        </div>
-      </div>   
-      <div class="form-group">
-        <button class="btn btn-block" style="padding-bottom: 0px;">Sign Up</button>
-      </div>
-      <div class="d-flex justify-content-center mb-10" style="margin-bottom: 10px;">
-        <a routerLink="/login" class="nav-link">Already member? <span><b>Login</b></span> </a>
-     </div>
-        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">Signup failed!<br />{{ errorMessage }}
-        </div>
+    <div class="form-group bmd-form-group mt-4">
+      <label class="bmd-label-static mb-2 ps-1">Email</label>
+      <input type="text" class="form-control" placeholder="Your username here"  [(ngModel)]="form.email">
     </div>
-  </form>
-  <div class="alert alert-success" *ngIf="isSuccessful">
-    Your registration is successful!
+    <div class="form-group bmd-form-group mt-4 mb-2">
+      <label class="bmd-label-static mb-2 ps-1">Password</label>
+      <input type="password" class="form-control" placeholder="Your username here"  [(ngModel)]="form.password">
+    </div>
+    <button class="btn bg-secondary w-100 mt-5 text-white bold-text" type="submit" (click)="onSubmit()">
+      Sign in
+    </button>
+    <div class="d-flex justify-content-between mt-4">
+      <p class="mt-2 ps-1  mb-0">Don't have account an account ?</p>
+      <div class="btn border" routerLink="/login">
+        Sign up
+      </div>
+    </div>
   </div>
 </div>
-  
+
+   

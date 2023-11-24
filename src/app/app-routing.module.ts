@@ -13,6 +13,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ShopMenuComponent } from './components/shop-menu/shop-menu.component';
 import { FormCheckoutComponent } from './components/form-checkout/form-checkout.component';
+import { EditprofileComponent } from './components/editprofile/editprofile.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,6 +22,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   {path:"formCheckout", component:FormCheckoutComponent},
   { path: 'profile', component: ProfileComponent },
+  { path: 'profiledit', component: EditprofileComponent },
+
   { path: 'user', component: BoardUserComponent },
   { path: 'product/:id', component: UpdateComponent},
   { path: 'mod', component: BoardModeratorComponent },

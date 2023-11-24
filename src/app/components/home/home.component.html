@@ -1,28 +1,133 @@
-<div class="container">
-  <div class="container">
-    <h2>Shops</h2>
-  </div>
-  <div class="shops-content" *ngIf="shops">
-    <div class="shop-wrapper" >
-      
-      <a href="" *ngFor="let shop of shops" class="nav-link" routerLink="/shop-details/{{shop._id}}">
-        <div class="card  col-small-4" >
-        
-          <img [src]="shop.image" class="card-img-top" alt="This is {{shop.username}}'s shop">
-          <div class="card-body">
-            <h5 class="card-title  nav-link">{{ shop.shopName }}</h5>
-            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a> -->
-          </div>
-        </div>
-      </a>
-      
-      
+<div class="container w-100 d-flex justify-content-between">
+  <div class="ps-3 mt-3">
+    <p class="text-secondary mb-0">Delivery Location:</p>
+    <div class="d-flex">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi mt-1 mr-2 bi-geo-alt-fill" viewBox="0 0 16 16">
+        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+      </svg>
+      <p class="text-dark ">{{user.address}}</p>
     </div>
   </div>
-  <div class="error-message nav-link" *ngIf="!shops">
-    {{ shops }}
+  <div class="w-30 pe-2 mt-3">
+    <div class="btn bg-light link ">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bell " viewBox="0 0 16 16">
+        <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+      </svg>
+    </div>
+    <div class="btn bg-light link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-basket2" viewBox="0 0 16 16">
+        <path d="M4 10a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0zm3 0a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0zm3 0a1 1 0 1 1 2 0v2a1 1 0 0 1-2 0z"/>
+        <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-.623l-1.844 6.456a.75.75 0 0 1-.722.544H3.69a.75.75 0 0 1-.722-.544L1.123 8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.163 8l1.714 6h8.246l1.714-6H2.163z"/>
+      </svg>
+    </div>
   </div>
+</div>
+  <div class="d-flex justify-content-around mt-4 container">
+    <div class="con">
+      <div class="btn bg-light link h0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cup-straw" viewBox="0 0 16 16">
+          <path d="M13.902.334a.5.5 0 0 1-.28.65l-2.254.902-.4 1.927c.376.095.715.215.972.367.228.135.56.396.56.82 0 .046-.004.09-.011.132l-.962 9.068a1.28 1.28 0 0 1-.524.93c-.488.34-1.494.87-3.01.87-1.516 0-2.522-.53-3.01-.87a1.28 1.28 0 0 1-.524-.93L3.51 5.132A.78.78 0 0 1 3.5 5c0-.424.332-.685.56-.82.262-.154.607-.276.99-.372C5.824 3.614 6.867 3.5 8 3.5c.712 0 1.389.045 1.985.127l.464-2.215a.5.5 0 0 1 .303-.356l2.5-1a.5.5 0 0 1 .65.278zM9.768 4.607A13.991 13.991 0 0 0 8 4.5c-1.076 0-2.033.11-2.707.278A3.284 3.284 0 0 0 4.645 5c.146.073.362.15.648.222C5.967 5.39 6.924 5.5 8 5.5c.571 0 1.109-.03 1.588-.085zm.292 1.756C9.445 6.45 8.742 6.5 8 6.5c-1.133 0-2.176-.114-2.95-.308a5.514 5.514 0 0 1-.435-.127l.838 8.03c.013.121.06.186.102.215.357.249 1.168.69 2.438.69 1.27 0 2.081-.441 2.438-.69.042-.029.09-.094.102-.215l.852-8.03a5.517 5.517 0 0 1-.435.127 8.88 8.88 0 0 1-.89.17zM4.467 4.884s.003.002.005.006zm7.066 0-.005.006c.002-.004.005-.006.005-.006M11.354 5a3.174 3.174 0 0 0-.604-.21l-.099.445.055-.013c.286-.072.502-.149.648-.222"/>
+        </svg>
+      </div>
+      <p class="text-dark text-center mt-1">Drink</p>
+    </div>
+    <div class="con">
+      <div class="btn  bg-light link h0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 32 32">
+          <path fill="currentColor" d="m4.892 23.735l.004-.003c-3.932-4.176-3.86-10.77.216-14.847c1.8-1.8 4.19-2.91 6.72-3.14a5.47 5.47 0 0 0 3.38-1.57l.18-.18c2.59-2.59 6.772-2.658 9.446-.205l.005-.005l.21.21l2.94 2.94c2.66 2.66 2.66 7 0 9.66l-.18.18c-.9.91-1.46 2.11-1.57 3.38c-.22 2.54-1.33 4.93-3.13 6.73c-4.16 4.15-10.92 4.15-15.07 0l-3.15-3.15Zm.03-12.13C2.78 15.04 3.146 19.595 6.02 22.646a9.087 9.087 0 0 0 8.47 2.673a9.044 9.044 0 0 0 3.012-1.224c.49-.31.68-.94.43-1.47l-2.85-5.98a5.671 5.671 0 0 0-2.68-2.66l-6.01-2.82c-.53-.24-1.16-.06-1.47.44Zm13.43 9.52a1.148 1.148 0 0 0 1.911.257a9.301 9.301 0 0 0 1.49-4.297c.14-1.64.86-3.18 2.02-4.35l.18-.18a5.26 5.26 0 0 0 1.543-3.856a5.251 5.251 0 0 0-1.764-3.803c-2.088-1.855-5.301-1.72-7.29.269l-.12.12a7.038 7.038 0 0 1-4.35 2.02c-1.5.13-2.94.62-4.2 1.42c-.76.49-.69 1.63.13 2.01l4.92 2.33c.006 0 .01.003.016.005c.005.002.01.005.014.005c.97.45 2.11.28 2.87-.48l.74-.74c.47-.47.65-1.16.46-1.79a3.14 3.14 0 0 1 .78-3.12a3.111 3.111 0 0 1 4.55.15c1.03 1.16 1.03 2.94 0 4.11c-.85.96-2.13 1.27-3.25.93a1.79 1.79 0 0 0-1.8.45l-.73.73c-.76.76-.93 1.91-.47 2.88c0 .005.003.008.006.01c.002.003.005.005.005.01l2.34 4.91Zm.31-13.24c-.67.67-.67 1.75 0 2.42c.67.67 1.76.67 2.43.01c.67-.67.67-1.76 0-2.43a1.72 1.72 0 0 0-2.43 0Z"/>
+        </svg>
+      </div>
+      <p class="text-dark text-center mt-1">Meat</p>
+    </div>
+  <div class="con">
+    <div class="btn ml-3 bg-light link h0">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 4.5c2.17 0 2.58.57 3.5 1.82c.38.53.82 1.12 1.44 1.74c.49.49.92.87 1.27 1.18c1.09.95 1.29 1.12 1.29 2.76c0 2.93 0 3.38-1.56 4.94C16 18.86 15.38 19.5 13 19.5c-1.12 0-1.5-.32-2.11-.81c-.62-.5-1.46-1.19-2.89-1.19c-3.04 0-3.5-3.45-3.5-5.5c0-1.35.5-3.09 1.97-3.58c1.78-.59 2.73-1.71 3.49-2.61c.79-.93 1.15-1.31 2.04-1.31M12 3C9 3 9 6 6 7c-2.12.71-3 3-3 5c0 3 1 7 5 7c2 0 2 2 5 2s4-1 6-3s2-3 2-6s-1-3-3-5s-2-4-6-4m0 5c-2.21 0-4 1.79-4 4s1.79 4 4 4s4-1.79 4-4s-1.79-4-4-4m0 2c-1.1 0-2 .9-2 2H9c0-1.65 1.35-3 3-3v1Z"/>
+      </svg>
+    </div>
+    <p class="text-dark text-center mt-1">Breakfast</p>
+  </div>
+  <div class="con">
+    <div class="btn bg-light link h0">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 50 50">
+        <path fill="currentColor" d="M48.894 15.154L44.959 46H31.668l-3.919-31h16.226l3.207-11.077L49 4.471l-3.077 10.66l2.971.023zM25.87 33s.497-4-6.395-4H8.499c-6.882 0-6.395 4-6.395 4H25.87zM2.104 42s-.487 4 6.395 4h10.977c6.892 0 6.395-4 6.395-4H2.104zm22.735-2c1.128 0 2.039-1.114 2.039-2.499c0-1.393-.911-2.501-2.039-2.501H3.04C1.917 35 1 36.108 1 37.501C1 38.886 1.917 40 3.04 40h21.799z"/>
+      </svg>
+    </div>
+    <p class="text-dark text-center mt-1">Lunch</p>
+  </div>
+  </div>
+<div class="container">
+  <h5 class="ps-3">Promotion Deals</h5>
+</div>
+<div class="container d-flex width justify-content-center" style="width: 380px;">
+  <div class="card w-100 " >
+    <div class="d-flex">
+
+      <div class="h">
+        <img src="https://i.postimg.cc/CMkv5sp6/cola-coco.jpg" class="img-item" alt="">
+      </div>
+      <div class="w-40">
+        <div class="d-flex justify-content-between mt-2">
+          <p class="ps-1 mb-1"><b>Maharaja Combo</b></p> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor " class="bi bi-x mt-1" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+          </svg>
+        </div> 
+        <p class="price ps-1">R 300</p> 
+        <p class="mb-0 ps-1 mt-1 text-secondary" style="font-size: 14px;">"Chips and Drinks Spectacular" promotion! For a limited time</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container d-flex justify-content-between mt-3">
+  <h5 class="ps-3">Featured Items</h5>
+  <p class="text-secondary pe-3" style="font-size: 14px;">See All</p>
+</div>
+<div class="container ps-4 mr-1">
+  <div class="row ps-1">
+    <div class="col-6" *ngFor="let product of products.slice(0, 4)">
+      <div class="card m-1 ">
+        <div class="container-img bg-light d-flex justify-content-center">
+          <img [src]="product.image" alt="" class="img-product mt-3  ">
+         
+        </div>
+        <div class="container">
+          <p class="mb-0 ps-1 text-secondary" style="font-size: 14px;"> Drinks</p>
+          <p class="ps-1 mb-0" style="font-size: 14px;"><b>{{product.title}}</b></p> 
+          <div class="d-flex justify-content-between w-100">
+            <p class="ps-1 mb-1" style="font-size: 12px;">R {{product.price}}</p> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart m-2 pos" viewBox="0 0 16 16">
+              <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="nav-bottom w-100">
+  <hr>
+  <div class="container justify-content-around d-flex" >
+    <div class="btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house mt-1 text-dark" viewBox="0 0 16 16">
+        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+      </svg>  
+    </div>
+    <div class="btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 24 24">
+        <path fill="black" fill-rule="evenodd" d="M5.586 4.586C5 5.172 5 6.114 5 8v9c0 1.886 0 2.828.586 3.414C6.172 21 7.114 21 9 21h6c1.886 0 2.828 0 3.414-.586C19 19.828 19 18.886 19 17V8c0-1.886 0-2.828-.586-3.414C17.828 4 16.886 4 15 4H9c-1.886 0-2.828 0-3.414.586ZM9 8a1 1 0 0 0 0 2h6a1 1 0 1 0 0-2H9Zm0 4a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H9Zm0 4a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2H9Z" clip-rule="evenodd"/>
+      </svg>
+    </div>
+    <div class="btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-person-circle text-dark" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+      </svg>
+    </div>
+  </div>
+
+
 </div>
 
 

@@ -21,6 +21,7 @@ import { UpdateComponent } from './components/update/update.component';
 import { ComponentsComponent } from './components/components.component';
 import { ShopProfileComponent } from './components/shop-profile/shop-profile.component';
 import { FormCheckoutComponent } from './components/form-checkout/form-checkout.component';
+import { EditprofileComponent } from './components/editprofile/editprofile.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FormCheckoutComponent } from './components/form-checkout/form-checkout.
     UpdateComponent,
     ComponentsComponent,
     ShopProfileComponent,
-    FormCheckoutComponent
+    FormCheckoutComponent,
+    EditprofileComponent
   ],
   imports: [
     BrowserModule,
